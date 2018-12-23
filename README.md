@@ -3,7 +3,15 @@
 ## Description
 Simple Pattern Recognition Using a Perceptron
 
+- Point living over the line = Output of +1
+
+- Point living under the line = Output of -1
+
+![Capture1](docs/capture1.png?raw=true "Capture1")
+
 ## Previews
+
+Coming soon!
 
 ## Setup
 - Open project with the Webstorm ide and open the index.html file.

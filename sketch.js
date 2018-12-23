@@ -22,7 +22,7 @@ let xmax = 1;
 let ymax = 1;
 
 // The function to describe a line
-function f(x) {
+function lineDescription(x) {
     let y = 0.3 * x + 0.4;
     return y;
 }
@@ -34,12 +34,16 @@ function setup() {
     // Second value is "Learning Constant"
     ptron = new Perceptron(3, 0.001); // Learning Constant is low just b/c it's fun to watch, this is not necessarily optimal
 
+    creatRandomPointSet();
+}
+
+function creatRandomPointSet() {
     // Create a random set of training points and calculate the "known" answer
     for (let i = 0; i < training.length; i++) {
         let x = random(xmin, xmax);
         let y = random(ymin, ymax);
         let answer = 1;
-        if (y < f(x)) answer = -1;
+        if (y < lineDescription(x)) answer = -1;
         training[i] = {
             input: [x, y, 1],
             output: answer
@@ -51,15 +55,32 @@ function setup() {
 function draw() {
     background(0);
 
+    drawLine();
+    drawCurrentWeights();
+
+    trainPerceptron();
+
+    drawPoints();
+}
+
+function trainPerceptron() {
+    // Train the Perceptron with one "training" point at a time
+    ptron.train(training[count].input, training[count].output);
+    count = (count + 1) % training.length;
+}
+
+function drawLine() {
     // Draw the line
     strokeWeight(1);
     stroke(255);
     let x1 = map(xmin, xmin, xmax, 0, width);
-    let y1 = map(f(xmin), ymin, ymax, height, 0);
+    let y1 = map(lineDescription(xmin), ymin, ymax, height, 0);
     let x2 = map(xmax, xmin, xmax, 0, width);
-    let y2 = map(f(xmax), ymin, ymax, height, 0);
+    let y2 = map(lineDescription(xmax), ymin, ymax, height, 0);
     line(x1, y1, x2, y2);
+}
 
+function drawCurrentWeights() {
     // Draw the line based on the current weights
     // Formula is weights[0]*x + weights[1]*y + weights[2] = 0
     stroke(255);
@@ -76,11 +97,9 @@ function draw() {
     x2 = map(x2, xmin, xmax, 0, width);
     y2 = map(y2, ymin, ymax, height, 0);
     line(x1, y1, x2, y2);
+}
 
-    // Train the Perceptron with one "training" point at a time
-    ptron.train(training[count].input, training[count].output);
-    count = (count + 1) % training.length;
-
+function drawPoints() {
     // Draw all the points based on what the Perceptron would "guess"
     // Does not use the "known" correct answer
     for (let i = 0; i < count; i++) {
