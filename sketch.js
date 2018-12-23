@@ -10,7 +10,7 @@
 // A list of points we will use to "train" the perceptron
 let training = new Array(2000);
 // A Perceptron object
-let ptron;
+let perceptron;
 
 // We will train the perceptron with one "Point" object at a time
 let count = 0;
@@ -30,9 +30,11 @@ function lineDescription(x) {
 function setup() {
     createCanvas(400, 400);
 
+    registerButtons();
+
     // The perceptron has 3 inputs -- x, y, and bias
     // Second value is "Learning Constant"
-    ptron = new Perceptron(3, 0.001); // Learning Constant is low just b/c it's fun to watch, this is not necessarily optimal
+    perceptron = new Perceptron(3, 0.001); // Learning Constant is low just b/c it's fun to watch, this is not necessarily optimal
 
     creatRandomPointSet();
 }
@@ -65,7 +67,7 @@ function draw() {
 
 function trainPerceptron() {
     // Train the Perceptron with one "training" point at a time
-    ptron.train(training[count].input, training[count].output);
+    perceptron.train(training[count].input, training[count].output);
     count = (count + 1) % training.length;
 }
 
@@ -86,7 +88,7 @@ function drawCurrentWeights() {
     stroke(255);
     strokeWeight(2);
 
-    let weights = ptron.getWeights();
+    let weights = perceptron.getWeights();
     x1 = xmin;
     y1 = (-weights[2] - weights[0] * x1) / weights[1];
     x2 = xmax;
@@ -103,11 +105,11 @@ function drawPoints() {
     // Draw all the points based on what the Perceptron would "guess"
     // Does not use the "known" correct answer
     for (let i = 0; i < count; i++) {
-        stroke(255);
+        stroke('#76fcfc');
         strokeWeight(1);
-        fill(255);
+        fill('#76fcfc');
 
-        let guess = ptron.feedforward(training[i].input);
+        let guess = perceptron.feedforward(training[i].input);
         if (guess > 0) noFill();
 
         let x = map(training[i].input[0], xmin, xmax, 0, width);

@@ -5,6 +5,7 @@
     <script src="p5.min.js"></script>
     <script src="p5.dom.min.js"></script>
 
+    <script language="javascript" type="text/javascript" src="control_buttons.js"></script>
     <script language="javascript" type="text/javascript" src="perceptron.js"></script>
     <script language="javascript" type="text/javascript" src="sketch.js"></script>
 
@@ -13,6 +14,55 @@
     <meta charset="utf-8">
 </head>
 <body>
-
+<div id="home-page-wrapper">
+    <div class="home-page-background"></div>
+    <div class="home-page-background second-background"></div>
+    <div id="home-page-container">
+        <div id="home-page-brand-name">P5 Perceptron &nbsp;
+            <i id="reset-btn" class="fas fa-angle-double-left"></i>&nbsp;
+            <i id="pause-btn" class="fas fa-pause" style="display: none"></i>
+            <i id="play-btn" class="fas fa-play"></i>&nbsp;
+        </div>
+        <div id="videoContainer">
+            <div id="videoButtonsContainer">
+                <div id="videoStatusContainer">
+                    <h6 class="buttonHeader"><span id="loading">Loading perceptron...</span></h6>
+                </div>
+                <!--<div id="videoChoicesContainer">-->
+                    <!--<p class="buttonText">-->
+                        <!--<button id="aButton">Add Image A</button>-->
+                    <!--<p class="buttonText"><span id="amountOfAImages">0</span> A Images</p>-->
+                    <!--<br><button id="bButton">Add Image B</button>-->
+                    <!--<p class="buttonText"><span id="amountOfBImages">0</span> B Images</p>-->
+                    <!--</p>-->
+                    <!--<br/>-->
+                <!--</div>-->
+                <!--<div id="videoCustomChoicesContainer">-->
+                    <!--<button id="customButton">Add Custom Image</button>-->
+                    <!--<input id="customInput" type="text">-->
+                    <!--<p class="buttonText"><span id="amountOfCustomImages">0</span> Custom Images</p>-->
+                    <!--</p>-->
+                    <!--<br/>-->
+                <!--</div>-->
+                <!--<div id="videoTrainContainer">-->
+                    <!--<p class="buttonText"><button id="train">Train</button><span id="loss"></span></p>-->
+                    <!--<br/>-->
+                <!--</div>-->
+                <!--<div id="videoResultContainer">-->
+                    <!--<p class="buttonText">-->
+                        <!--<button id="predict">Start Guessing</button><br>-->
+                        <!--My guess is: <span id="result">...</span>-->
+                    <!--</p>-->
+                <!--</div>-->
+                <!--<div id="videoSaveAndLoadContainer">-->
+                    <!--<p class="buttonText">-->
+                        <!--<button id="saveButton">Save</button>-->
+                        <!--<button id="loadButton">Load</button>-->
+                    <!--</p>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
