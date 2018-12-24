@@ -28,7 +28,7 @@ So the possible error values are: -2, 0, +2
 
 ## Previews
 
-Coming soon!
+![Preview1](docs/preview/preview1.png?raw=true "Preview1")
 
 ## Setup
 - Open project with the Webstorm ide and open the index.html file.
