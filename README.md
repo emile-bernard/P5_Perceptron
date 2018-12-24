@@ -1,7 +1,11 @@
 # P5_Perceptron
 
 ## Description
-Simple Pattern Recognition Using a Perceptron
+Simple pattern recognition using a perceptron and supervised learning.
+
+In the modern sense, the perceptron is an algorithm for learning a binary classifier: a function that maps its input **x** (a real-valued vector) to an output value **f(x)** (a single binary value):
+
+f(x) = 1 if w*x + b > 0 | = 0 otherwise
 
 - Point living over the line = Output of +1
 
@@ -23,3 +27,4 @@ Coming soon!
 
 ## Links
 - [Simple Pattern Recognition Using a Perceptron](https://natureofcode.com/book/chapter-10-neural-networks/)
+- [Perceptron](https://en.wikipedia.org/wiki/Perceptron)
