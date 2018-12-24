@@ -1,5 +1,6 @@
 // A list of points we will use to "train" the perceptron
-let training = new Array(2000);
+let trainingPoints = new Array(2000);
+
 // A Perceptron object
 let perceptron;
 
@@ -27,20 +28,18 @@ function setup() {
     // Second value is "Learning Constant"
     perceptron = new Perceptron(3, 0.001); // Learning Constant is low just b/c it's fun to watch, this is not necessarily optimal
 
-    creatRandomPointSet();
+    createRandomPointSet();
 }
 
-function creatRandomPointSet() {
+function createRandomPointSet() {
     // Create a random set of training points and calculate the "known" answer
-    for (let i = 0; i < training.length; i++) {
+    for (let i = 0; i < trainingPoints.length; i++) {
         let x = random(xmin, xmax);
         let y = random(ymin, ymax);
         let answer = 1;
+
         if (y < lineDescription(x)) answer = -1;
-        training[i] = {
-            input: [x, y, 1],
-            output: answer
-        };
+        trainingPoints[i] = new Point(x, y, 1, answer);
     }
 }
 
@@ -58,8 +57,8 @@ function draw() {
 
 function trainPerceptron() {
     // Train the Perceptron with one "training" point at a time
-    perceptron.train(training[count].input, training[count].output);
-    count = (count + 1) % training.length;
+    perceptron.train(trainingPoints[count].getInputs(), trainingPoints[count].getOutput());
+    count = (count + 1) % trainingPoints.length;
 }
 
 function drawLine() {
@@ -96,15 +95,17 @@ function drawPoints() {
     // Draw all the points based on what the Perceptron would "guess"
     // Does not use the "known" correct answer
     for (let i = 0; i < count; i++) {
-        stroke('#76fcfc');
-        strokeWeight(1);
-        fill('#76fcfc');
+        // stroke('#76fcfc');
+        // strokeWeight(1);
+        // fill('#76fcfc');
+        //
+        // let guess = perceptron.feedforward(trainingPoints[i].getInputs());
+        // if (guess > 0) noFill();
+        //
+        // let x = map(trainingPoints[i].getInputs()[0], xmin, xmax, 0, width);
+        // let y = map(trainingPoints[i].getInputs()[1], ymin, ymax, height, 0);
+        // ellipse(x, y, 8, 8);
 
-        let guess = perceptron.feedforward(training[i].input);
-        if (guess > 0) noFill();
-
-        let x = map(training[i].input[0], xmin, xmax, 0, width);
-        let y = map(training[i].input[1], ymin, ymax, height, 0);
-        ellipse(x, y, 8, 8);
+        trainingPoints[i].drawPoint();
     }
 }

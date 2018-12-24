@@ -1,16 +1,29 @@
 class Point {
-    constructor(x, y) {
+    constructor(x, y, label, answer) {
         this.x = x;
         this.y = y;
-
-        if(x > y) {
-           this.label = 1;
-        } else {
-            this.label = -1;
-        }
+        this.label = label;
+        this.answer = answer;
     }
 
-    getLabel() {
-        return this.label;
+    drawPoint() {
+        stroke('#76fcfc');
+        strokeWeight(1);
+        fill('#76fcfc');
+
+        let guess = perceptron.feedforward(this.getInputs());
+        if (guess > 0) noFill();
+
+        let x = map(this.x, xmin, xmax, 0, width);
+        let y = map(this.y, ymin, ymax, height, 0);
+        ellipse(x, y, 8, 8);
+    }
+
+    getInputs() {
+        return [this.x, this.y, this.label]
+    }
+
+    getOutput() {
+        return this.answer;
     }
 }
