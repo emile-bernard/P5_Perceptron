@@ -33,16 +33,6 @@ button {
     color: black;
 }
 
-#train {
-    color: white;
-    background: #066466;
-}
-
-#predict {
-    color: white;
-    background: #7c5a1b;
-}
-
 .buttonHeader{
     margin: 4px;
     font-weight: lighter;
@@ -51,62 +41,26 @@ button {
     color: black;
 }
 
-#videoContainer {
+#statusContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#videoStatusContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#videoButtonsContainer {
+#statusDataContainer {
     display: flex;
     flex-direction: column;
     background: #4FB99F;
     width: 100%;
 }
 
-#videoChoicesContainer {
+#statusDataTextContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
-
-#videoCustomChoicesContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#videoTrainContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-#videoResultContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#videoSaveAndLoadContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
 
 #home-page-wrapper {
     display: flex;

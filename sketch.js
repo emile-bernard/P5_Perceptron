@@ -58,6 +58,7 @@ function draw() {
 }
 
 function drawStatusText() {
+    document.getElementById('learning-rate-status-text').innerText = 'Learning Rate: ' + perceptron.learningRate;
     document.getElementById('count-status-text').innerText = 'Count: ' + count.toString() + '/2000';
 }
 

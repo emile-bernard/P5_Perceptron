@@ -2,14 +2,14 @@
 
 // Perceptron is created with n weights and learning constant
 class Perceptron {
-    constructor(n, c) {
+    constructor(n, learningRate) {
         // Array of weights for inputs
         this.weights = new Array(n);
         // Start with random weights
         for (let i = 0; i < this.weights.length; i++) {
             this.weights[i] = random(-1, 1);
         }
-        this.c = c; // learning rate/constant
+        this.learningRate = learningRate; // learning rate/constant
     }
 
     // Function to train the Perceptron
@@ -24,7 +24,7 @@ class Perceptron {
         let error = desiredOutput - guessedOutput;
         // Adjust weights based on weightChange * input
         for (let i = 0; i < this.weights.length; i++) {
-            this.weights[i] += this.c * error * inputs[i];
+            this.weights[i] += this.learningRate * error * inputs[i];
         }
     }
 
