@@ -53,6 +53,12 @@ function draw() {
     trainPerceptron();
 
     drawPoints();
+
+    drawStatusText();
+}
+
+function drawStatusText() {
+    document.getElementById('count-status-text').innerText = 'Count: ' + count.toString() + '/2000';
 }
 
 function trainPerceptron() {
@@ -95,17 +101,6 @@ function drawPoints() {
     // Draw all the points based on what the Perceptron would "guess"
     // Does not use the "known" correct answer
     for (let i = 0; i < count; i++) {
-        // stroke('#76fcfc');
-        // strokeWeight(1);
-        // fill('#76fcfc');
-        //
-        // let guess = perceptron.feedforward(trainingPoints[i].getInputs());
-        // if (guess > 0) noFill();
-        //
-        // let x = map(trainingPoints[i].getInputs()[0], xmin, xmax, 0, width);
-        // let y = map(trainingPoints[i].getInputs()[1], ymin, ymax, height, 0);
-        // ellipse(x, y, 8, 8);
-
         trainingPoints[i].drawPoint();
     }
 }
