@@ -2,8 +2,7 @@
 // The Nature of Code
 // http://natureofcode.com
 
-// Simple Perceptron Example
-// See: http://en.wikipedia.org/wiki/Perceptron
+
 
 // Perceptron Class
 

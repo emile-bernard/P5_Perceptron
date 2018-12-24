@@ -28,5 +28,6 @@ Coming soon!
 - [p5.js](https://p5js.org/)
 
 ## Links
+- [The Nature of Code](http://natureofcode.com)
 - [Simple Pattern Recognition Using a Perceptron](https://natureofcode.com/book/chapter-10-neural-networks/)
 - [Perceptron](https://en.wikipedia.org/wiki/Perceptron)
