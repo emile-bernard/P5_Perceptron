@@ -15,6 +15,17 @@ Basically, a perceptron recieves an input and computes a guess (output).
 
 ![Capture1](docs/capture1.png?raw=true "Capture1")
 
+Error = desired output - guessed output
+
+| Desired  | Guessed  | Error |
+| :------------ |:---------------:| -----:|
+| -1      | -1 | 0 |
+| -1      | +1        |   -2 |
+| +1 | -1        |    +2 |
+| +1 | +1        |    0 |
+
+So the possible error values are: -2, 0, +2
+
 ## Previews
 
 Coming soon!

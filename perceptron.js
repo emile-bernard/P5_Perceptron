@@ -1,9 +1,3 @@
-// Daniel Shiffman
-// The Nature of Code
-// http://natureofcode.com
-
-
-
 // Perceptron Class
 
 // Perceptron is created with n weights and learning constant

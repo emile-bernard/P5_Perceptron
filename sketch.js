@@ -1,12 +1,3 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
-
-// Simple Perceptron Example
-// See: http://en.wikipedia.org/wiki/Perceptron
-
-// Code based on text "Artificial Intelligence", George Luger
-
 // A list of points we will use to "train" the perceptron
 let training = new Array(2000);
 // A Perceptron object
