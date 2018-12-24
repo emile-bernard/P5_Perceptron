@@ -21,14 +21,14 @@ class Perceptron {
 
     // Function to train the Perceptron
     // Weights are adjusted based on "desired" answer
-    train(inputs, desired) {
+    train(inputs, desiredOutput) {
         // Guess the result
-        let guess = this.feedforward(inputs);
+        let guessedOutput = this.feedforward(inputs);
         // Compute the factor for changing the weight based on the error
         // Error = desired output - guessed output
         // Note this can only be 0, -2, or 2
         // Multiply by learning constant
-        let error = desired - guess;
+        let error = desiredOutput - guessedOutput;
         // Adjust weights based on weightChange * input
         for (let i = 0; i < this.weights.length; i++) {
             this.weights[i] += this.c * error * inputs[i];

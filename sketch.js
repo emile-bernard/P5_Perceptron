@@ -58,7 +58,7 @@ function draw() {
     background(0);
 
     drawLine();
-    drawCurrentWeights();
+    drawCurrentWeightsLine();
 
     trainPerceptron();
 
@@ -82,7 +82,7 @@ function drawLine() {
     line(x1, y1, x2, y2);
 }
 
-function drawCurrentWeights() {
+function drawCurrentWeightsLine() {
     // Draw the line based on the current weights
     // Formula is weights[0]*x + weights[1]*y + weights[2] = 0
     stroke(255);

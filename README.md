@@ -7,6 +7,8 @@ In the modern sense, the perceptron is an algorithm for learning a binary classi
 
 f(x) = 1 if w*x + b > 0 | = 0 otherwise
 
+Basically, a perceptron recieves an input and computes a guess (output).
+
 - Point living over the line = Output of +1
 
 - Point living under the line = Output of -1
