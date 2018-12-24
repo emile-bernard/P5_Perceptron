@@ -21,9 +21,9 @@ function resetGame() {
 }
 
 function play() {
-
+    loop();
 }
 
 function pause() {
-
+    noLoop();
 }

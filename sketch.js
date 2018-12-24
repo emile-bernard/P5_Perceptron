@@ -86,10 +86,10 @@ function drawCurrentWeightsLine() {
     strokeWeight(2);
 
     let weights = perceptron.getWeights();
-    x1 = xmin;
-    y1 = (-weights[2] - weights[0] * x1) / weights[1];
-    x2 = xmax;
-    y2 = (-weights[2] - weights[0] * x2) / weights[1];
+    let x1 = xmin;
+    let y1 = (-weights[2] - weights[0] * x1) / weights[1];
+    let x2 = xmax;
+    let y2 = (-weights[2] - weights[0] * x2) / weights[1];
 
     x1 = map(x1, xmin, xmax, 0, width);
     y1 = map(y1, ymin, ymax, height, 0);
